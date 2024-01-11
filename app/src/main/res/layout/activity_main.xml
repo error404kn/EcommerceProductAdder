@@ -4,17 +4,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/bg_color"
+    android:fillViewport="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+        <ProgressBar
+            android:id="@+id/progressbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:visibility="invisible"/>
+
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:id="@+id/productsInfo"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
             android:layout_marginTop="20dp"
@@ -26,7 +37,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Product general information:"
+                android:text="პროდუქტის დასამატებელი:"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:textColor="@color/black" />
@@ -35,7 +46,8 @@
                 android:id="@+id/edName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Name"
+                android:hint="პროდუქტის სახელი"
+                android:textColorHint="@color/black"
                 android:layout_marginTop="10dp"/>
 
 
@@ -43,28 +55,32 @@
                 android:id="@+id/edCategory"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Category"/>
+                android:textColorHint="@color/black"
+                android:hint="პროდუქტის კატეგორია"/>
 
             <EditText
                 android:id="@+id/edDescription"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Product description (Optional)"
+                android:textColorHint="@color/black"
+                android:hint="პროდუქტის აღწერა (არასავალდებულო)"
                 />
 
             <EditText
                 android:id="@+id/edPrice"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Price"
-                android:inputType="number"/>
+                android:hint="პროდუქტის ფასი"
+                android:textColorHint="@color/black"
+                android:inputType="numberDecimal"/>
 
             <EditText
                 android:id="@+id/offerPercentage"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Offer Percentage (Optional)"
-                android:inputType="number"/>
+                android:textColorHint="@color/black"
+                android:hint="შეთავაზებული პროცენტი (არასავალდებულო)"
+                android:inputType="numberDecimal"/>
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -81,17 +97,12 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Product details:"
+                android:text="პროდუქტის აღწერა:"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:textColor="@color/black" />
 
-            <EditText
-                android:id="@+id/edSizes"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Sizes (Optional) | use , between each new size"
-                android:inputType="number"/>
+
 
             <LinearLayout
                 android:layout_width="wrap_content"
